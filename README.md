@@ -1,4 +1,4 @@
-# nibar
+# hellobar
 
 Simple [Übersicht](https://github.com/felixhageloh/uebersicht) widget status bar with [yabai](https://github.com/koekeishiya/yabai) support.
 
@@ -13,7 +13,7 @@ Originally forked from https://github.com/kkga/nibar. Tweaked it to match my pre
 Clone this repo to your Übersicht widgets directory.
 
 ```bash
-$ git clone https://github.com/kkoscielniak/nibar $HOME/Library/Application\ Support/Übersicht/widgets/nibar
+$ git clone https://github.com/kkoscielniak/hellobar $HOME/Library/Application\ Support/Übersicht/widgets/hellobar
 ```
 
 ## Dependencies
@@ -30,5 +30,5 @@ The widgets for displaying yabai workspaces aren't refreshing automatically (to 
 
 ```sh
 yabai -m signal --add event=space_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"hellobar-spaces-primary-jsx\"'"
 ```

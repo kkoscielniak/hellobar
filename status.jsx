@@ -25,7 +25,7 @@ const style = {
 
 export const refreshFrequency = 10000;
 
-export const command = "./nibar/scripts/status.sh";
+export const command = "./hellobar/scripts/status.sh";
 
 export const render = ({ output }) => {
   const data = parse(output);
