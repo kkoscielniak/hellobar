@@ -11,33 +11,42 @@ const desktopStyle = {
   width: "3ch",
 };
 
+const colorPalette = [
+  '#5EBD3E',
+  '#FFB900',
+  '#F78200',
+  '#E23838',
+  '#973999',
+  '#009CDF',
+];
 
-const renderSpace = (index, focused, visible, windows) => {
-  let contentStyle = JSON.parse(JSON.stringify(desktopStyle));
-  let hasWindows = windows.length > 0;
-  if (focused == 1) {
-    contentStyle.color = styles.colors.fg;
-    contentStyle.fontWeight = "700";
-  } else if (visible == 1) {
-    contentStyle.color = styles.colors.fg;
+const renderSpace = (space, index) => {
+  const style = {
+    color: colorPalette[index % 6],
+    marginRight: 5
   }
+
+  const { label, type, index: spaceIndex, focused } = space;
+
+  const nativeFullscreen = space['native-fullscreen'] === 1; 
+
   return (
-    <div style={contentStyle}>
-      {focused ? "[" : <span>&nbsp;</span> }
-      {index}
-      {!focused && hasWindows ? "°" : null }
-      {focused ? "]" : <span>&nbsp;</span> }
+    <div style={style}>
+      {!!focused && '['}
+        {label.length ? label : spaceIndex}
+        {space.type === 'float' && !nativeFullscreen && "°"}
+      {!!focused && ']'}
     </div>
-  );
-};
+  )
+}
 
 const render = ({ output }) => {
   if (typeof output === "undefined") return null;
 
   const spaces = [];
 
-  output.forEach(function(space) {
-    spaces.push(renderSpace(space.index, space.focused, space.visible, space.windows));
+  output.forEach((space, index) => {
+    spaces.push(renderSpace(space, index));
   });
 
   return (
