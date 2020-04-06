@@ -1,6 +1,6 @@
 {
-  "name": "nibar",
-  "description": "Displays a bar at the top of the screen with system stats.",
-  "author": "Gadzhi Kharkharov",
+  "name": "",
+  "description": "Displays a bar at the top of the screen with system stats. Forked from nibar",
+  "author": "Krystian Kościelniak",
   "email": "me@kkga.me"
 }
