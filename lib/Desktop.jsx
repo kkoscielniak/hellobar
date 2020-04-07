@@ -1,4 +1,4 @@
-import styles from "./styles.jsx";
+import styles, { colorPalette } from "./styles.jsx";
 import run from "uebersicht";
 
 const containerStyle = {
@@ -11,14 +11,7 @@ const desktopStyle = {
   width: "3ch",
 };
 
-const colorPalette = [
-  '#5EBD3E',
-  '#FFB900',
-  '#F78200',
-  '#E23838',
-  '#973999',
-  '#009CDF',
-];
+const indexToBinary = index => index.toString(2).padStart(4, 0);
 
 const renderSpace = (space, index) => {
   const style = {
@@ -28,12 +21,12 @@ const renderSpace = (space, index) => {
 
   const { label, type, index: spaceIndex, focused } = space;
 
-  const nativeFullscreen = space['native-fullscreen'] === 1; 
+  const nativeFullscreen = space['native-fullscreen'] === 1;
 
   return (
     <div style={style}>
       {!!focused && '['}
-        {label.length ? label : spaceIndex}
+        {label.length ? label : indexToBinary(spaceIndex)}
         {space.type === 'float' && !nativeFullscreen && "°"}
       {!!focused && ']'}
     </div>
