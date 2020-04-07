@@ -1,20 +1,33 @@
-import styles from "./styles.jsx";
+import styles, { colorPalette } from "./styles.jsx";
+
+const getColor = (percentage, charging) => {
+  if (charging) {
+    return colorPalette[0];
+  } 
+
+  if (percentage < 50) {
+    return colorPalette[1];
+  } 
+
+  if (percentage < 15) {
+    return colorPalette[2]; 
+  }
+
+  return colorPalette[0]
+}
 
 const render = ({ output }) => {
-  let charging = output.charging;
-  let percentage = output.percentage;
-  let remaining = output.remaining;
+  const { charging, percentage, remaining } = output; 
+
   return (
-    <div>
-      <div
-        style={
-          percentage < 10 && charging == false
-            ? { color: styles.colors.red }
-            : null
+    <div
+      style={
+        {
+          color: getColor(percentage, charging)
         }
-      >
-        <span>{charging ? "􀋦" : null} {percentage}%</span>
-      </div>
+      }
+    >
+      <span>{charging ? "chgr" : "bttr"} {percentage}%</span>
     </div>
   );
 };
