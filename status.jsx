@@ -5,7 +5,7 @@ import Wifi from "./lib/Wifi.jsx";
 import Dnd from "./lib/Dnd.jsx";
 import Error from "./lib/Error.jsx";
 import parse from "./lib/parse.jsx";
-import styles from "./lib/styles.jsx";
+import styles, { colors } from "./lib/styles.jsx";
 
 const style = {
   display: "grid",
@@ -16,11 +16,8 @@ const style = {
   overflow: "hidden",
   right: "0px",
   top: "0px",
-  color: styles.colors.dim,
-  fontFamily: styles.fontFamily,
-  fontSize: styles.fontSize,
-  lineHeight: styles.lineHeight,
-  fontWeight: styles.fontWeight
+  color: colors.white,
+  ...styles,
 };
 
 export const refreshFrequency = 10000;
@@ -38,7 +35,7 @@ export const render = ({ output }) => {
   }
   return (
     <div style={style}>
-      {/*<Cpu output={data.cpu} />*/}
+      <Cpu output={data.cpu} />
       <Wifi output={data.wifi} />
       <Battery output={data.battery} />
       <DateTime output={data.datetime} />

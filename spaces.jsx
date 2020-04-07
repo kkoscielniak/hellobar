@@ -12,11 +12,7 @@ const style = {
   overflow: "hidden",
   left: "0px",
   top: "0px",
-  fontFamily: styles.fontFamily,
-  lineHeight: styles.lineHeight,
-  fontSize: styles.fontSize,
-  color: styles.colors.dim,
-  fontWeight: styles.fontWeight
+  ...styles,
 };
 
 export const refreshFrequency = false;
