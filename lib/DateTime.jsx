@@ -1,10 +1,11 @@
 const render = ({ output }) => {
   if (typeof output === "undefined") return null;
+
+  const { date, time } = output;
+
   return (
     <div>
-      {output.date}
-      &nbsp;
-      {output.time}
+      {date}&nbsp;{time}
     </div>
   );
 };
