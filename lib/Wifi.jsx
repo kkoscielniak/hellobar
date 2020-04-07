@@ -7,7 +7,7 @@ const render = ({ output }) => {
   if (status === 'inactive') 
     return <div>no wifi</div>;
     
-  return <div>ssid: {ssid}</div>;
+  return <div>ssid {ssid}</div>;
 };
 
 export default render;
