@@ -1,12 +1,9 @@
-import styles from "./styles.jsx";
+import { colors } from "./styles.jsx";
 
 const style = {
-  color: styles.colors.red
+  color: colors.red
 }
 
-const render = ({ output }) => {
-  if (output === 0) return null;
-  return <div style={style}>􀆺</div>;
-};
+const render = ({ output }) => output !== 0 && <div style={style}>dnd</div>;
 
 export default render;
