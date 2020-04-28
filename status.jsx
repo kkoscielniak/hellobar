@@ -14,18 +14,19 @@ const style = {
   gridGap: "20px",
   position: "fixed",
   overflow: "hidden",
-  right: "0px",
-  top: "0px",
+  right: 0,
+  top: 0,
   color: colors.white,
   ...styles,
 };
 
-export const refreshFrequency = 10000;
+export const refreshFrequency = 5000;
 
 export const command = "./hellobar/scripts/status.sh";
 
 export const render = ({ output }) => {
   const data = parse(output);
+
   if (typeof data === "undefined") {
     return (
       <div style={style}>
