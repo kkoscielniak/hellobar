@@ -30,5 +30,5 @@ The widgets for displaying yabai workspaces aren't refreshing automatically (to 
 
 ```sh
 yabai -m signal --add event=space_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"hellobar-spaces-primary-jsx\"'"
+    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"hellobar-spaces-jsx\"'"
 ```
