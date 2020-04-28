@@ -6,7 +6,7 @@ Originally forked from https://github.com/kkga/nibar. Tweaked it to match my pre
 
 ## Screenshot
 
-![img](./ss.png)
+![img](./screenshot.png)
 
 ## Installation
 
@@ -19,7 +19,7 @@ $ git clone https://github.com/kkoscielniak/hellobar $HOME/Library/Application\ 
 ## Dependencies
 
 - [jq](https://github.com/stedolan/jq) — used for parsing json output and displaying the workspaces widget
-    - install with homebrew: `brew install jq`
+  - install with homebrew: `brew install jq`
 - [tba]
 
 ## Usage
