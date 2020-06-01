@@ -7,7 +7,7 @@ export default {
   fontSize: 12,
   lineHeight: '24px',
   fontWeight: 500,
-  fontFamily: "FuraCode Nerd Font"
+  fontFamily: "FiraCode Nerd Font"
 }
 
 export const colors = {
